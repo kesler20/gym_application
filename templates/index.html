@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<section class="showcase head bg-primary py-3">
+    <div class="bg-img" style="
+        background-image: url('../static/img/gym.jpg'); 
+        background-attachment: fixed;
+        background-repeat: no-repeat; 
+        background-position-x: 70%; 
+        background-position-y: center; 
+        background-size: 70%;
+        ">
+        <div class="container grid">
+            <div">
+                <h3 class="md">Health is Wealth</h3> <!--remove text align center-->
+                <h1 class="xl">Great Things Take Time</h1>
+                <p class="md">Trust The process</p>
+                <p>1% Everyday</p>
+                <p>To obtain Results You Never Had Before You Need To do Things You never Done Before</p>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="showcase introduction bg-primary">
+    <div class="container grid">
+        <div class="showcase-form card">
+             <form method='post' action='../'>
+                <div class="form-control">
+                    <p>{{ name }}</p>
+                </div>
+                <div class="form-control">
+                    <p>Weight (Kg)</p>
+                    <input type="number" name="weight" placeholder="{{ weight }}">
+                </div>
+                <div class="form-control">
+                    <p>Sets</p>
+                    <input type="number" name="sets" placeholder="{{ sets }}">
+                </div>
+                <div class="form-control">
+                    <p>Reps</p>
+                    <input type="number" name="reps" placeholder="{{ reps }}" required>
+                </div>
+                <input type="submit" value="Record" class="btn btn-outline">
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="introduction bg-primary">
+    <div class="container grid">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p style='color: white;'>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+</section>
+
+{% endblock %}
