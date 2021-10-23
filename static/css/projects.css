@@ -211,6 +211,9 @@
    border-radius: 20%;
 }
 
+.exercises {
+   height: 60vh;
+}
 
 .presentation.projects .card {
    height: 60vh;
